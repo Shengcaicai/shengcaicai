@@ -1,1 +1,69 @@
+body，html{
+    padding:0;
+    margin:0;
+}
 
+.container{
+    box-sizing:border-box;
+    padding:10px;
+}
+
+/*清除浮动*/
+.row:before,
+.row:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+/*给每个块添加基础样式*/
+[class*='col-'] {
+    margin: 10px;
+    box-sizing: border-box;
+    height:50px;
+    background-color:#eee;
+    border:1px solid #999;
+    font-size:10px;
+    text-align:center;
+    line-height:50px;
+    float:left;
+}
+
+
+/*屏幕大于768*/
+@media(min-width:769px){
+    .col-md-1{
+        width:calc(8.333% - 20px);
+    }
+    .col-md-2{
+        width:calc(16.666% - 20px);
+    }
+    .col-md-3{
+        width:calc(25% - 20px);
+    }
+    .col-md-4{
+        width:calc(33.333% - 20px);
+    }
+    .col-md-6{
+        width:calc(50% - 20px);
+    }
+}
+
+/*屏幕小于768*/
+@media(max-width:768px){
+    .col-sm-2 {
+       width: calc(16.666% - 20px);
+   }
+    .col-sm-3{
+        width:calc(25% - 20px);
+    }
+    .col-sm-6{
+        width:calc(50% - 20px);
+    }
+    .col-sm-8{
+        width:calc(66.666% - 20px);
+    }
+    .col-sm-12{
+        width:clac(100% - 20px);
+    }
+}
