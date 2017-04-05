@@ -1,1 +1,55 @@
+*{
+    padding:20px;
+    margin:0;
+}
+
+.flex,
+.flex > div{
+    box-sizing : border-box;
+}
+
+.flex{
+    border:1px solid grey;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+    display:-ms-flexbox;
+    -ms-flex-pack:justify;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-flex:none;
+    -ms-flex:none;
+    flex:none;
+}
+
+.flex >div {
+    width:150px;
+    border:1px solid #f00;
+    padding:0;
+    margin-bottom:10px;
+}
+
+.flex1{height:120px;}
+.flex2{height:100px;}
+.flex3{height:40px;}
+.flex4{height:200px;}
+
+@media all and (max-width:640px) {
+    .flex4 {
+        -webkit-order: -1;
+        -ms-flex-order: -1;
+        order: -1;
+    }
+
+    .flex {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+}
 
