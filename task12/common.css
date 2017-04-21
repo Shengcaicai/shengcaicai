@@ -1,0 +1,17 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+    height: 500px; /* Or whatever */
+    background-color: black;
+}
+
+.child {
+    width: 100px;  /* Or whatever */
+    height: 100px; /* Or whatever */
+    margin: auto;  /* Magic! */
+    background-color: white;
+}

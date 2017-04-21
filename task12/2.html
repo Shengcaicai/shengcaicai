@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="js/mobile-util.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <title></title>
+    <style type="text/css">
+        body{font-family: "微软雅黑";}
+        *{box-sizing: border-box;-webkit-box-sizing: border-box;}
+        a{-webkit-tap-highlight-color:transparent;}
+        a:active,a:visited,a:hover{color: #333333;}
+
+        .top-bar{position: fixed;top: 0;left: 0;width: 100%; height: 1.825rem;line-height: 1.825rem;font-size: 0.75rem; background: #91d4da;color: #fff;}
+        .top-bar a{position:absolute;left: 0; padding-left: 1.125rem; line-height: 1.825rem; color: #FFFFFF;background: url(img/back.png) no-repeat 0.5rem 0.55rem/0.45rem 0.77rem;}
+        .top-bar h1{text-align: center;}
+        .nav-bar{position: fixed;top: 1.825rem;width: 100%; height: 1.85rem;display: -webkit-flex;display:flex;-webkit-flex-flow:row nowrap;flex-flow:row nowrap;background: #fff;}
+        .nav-bar a{line-height: 1.85rem;text-align: center; font-size: 0.6rem; flex: 1 1 auto; -webkit-flex: 1 1 auto;}
+        .nav-bar .active{border-bottom:0.125rem solid #91d6d9 ;}
+        .main-con{width: 100%; padding-top: 3.65rem;overflow-y: auto;background: #f5f5f5;}
+        .banner{width: 100%;}
+        .banner .imgbox{width: 100%;min-height: 8.75rem;overflow: hidden;}
+        .imgbox img{width: 100%;border: none;}
+        .wrapper{padding: 0.5rem 0.675rem;}
+        .section1{height: 4.75rem;background: #fff;}
+        .section1 .labelbox{width: 100%;height: 3.45rem;border-bottom: 2px solid #dfdfdf;display: -webkit-flex; display: flex;-webkit-flex-flow: row nowrap;flex-flow: row nowrap;-webkit-justify-content: space-around;justify-content: space-around;}
+        .section1 .labelbox li{width:1.95rem;}
+        .section1 .labelbox li span{display: block;height: 1.925rem;margin-bottom: 0.45rem; background: url(img/未标题-2.png) no-repeat 0 0rem/100% 100%;}
+        .section1 .labelbox li a{display: block;line-height: 1rem;font-size: 0.55rem;text-align: center;}
+        .section2{height: 6.75rem;background: #fff;}
+        .section2 .columnbox{display: flex;display: -webkit-flex;-webkit-flex-flow: row nowrap;flex-flow: row nowrap; height: 5.5rem;}
+        .section2 .columnbox .item-column{flex: 1 1 auto;}
+        .section2 .columnbox .item-column .imgbox{width: 100%;height: 3.35rem; overflow: hidden;}
+        .section2 .columnbox .item-column .imgbox img{width: 100%;border: none;}
+        .section2 .columnbox .item-column h2{line-height: 1rem;font-size: 0.75rem;text-align: center;}
+        .section2 .columnbox .item-column h3{line-height: 1.1rem;font-size: 0.55rem; text-align: center;}
+        .section3{padding: 0 0.675rem;background: #fff;margin-top: 0.55rem;}
+        .section3 h2{line-height: 1.9rem;font-size: 0.75rem; border-bottom: 0.05rem solid #e6e6e6;}
+        .section3 .section_item{display: flex;display: -webkit-flex;-webkit-flex-flow: row nowrap;flex-flow: row nowrap;-webkit-justify-content: space-between;justify-content: space-between;padding-top: 0.55rem ;}
+        .section3 .section_item:last-of-type{padding-bottom: 0.55rem;}
+        .section3 .section_item .imgbox{width: 100%;height: 3.65rem; overflow: hidden;border: 0.05rem solid #ffc256;}
+        .section3 .section_item .titleimg{width: 26.2%;}
+        .section3 .section_item .text_case{width: 70.8%;display: -webkit-flex;display: flex;-webkit-flex-flow: row wrap;flex-flow: row wrap;-webkit-justify-content: space-between;justify-content: space-between;-webkit-align-content:space-between;align-content:space-between;}
+        .section3 .section_item .text_case h3{-webkit-flex: 0 1 48%;flex: 0 1 48%;text-align: center;font-size: 0.55rem; line-height: 1.6rem;background: #f8f8f8;}
+        .section4{background: #fff;margin: 0.55rem 0 2rem;}
+        .section4 .article-item{ display: flex;display: -webkit-flex;-webkit-flex-flow:row nowrap;flow:row nowrap;-webkit-justify-content: space-between;justify-content: space-between;padding: 0.45rem 0.35rem;border-bottom: 0.05rem solid #f3f3f3;}
+        .section4 .article-item .imgbox{-webkit-flex: 0 1 30%;flex: 0 1 30%; overflow: hidden;}
+        .section4 .article-item .article-con{-webkit-flex: 0 1 67%;flex: 0 1 67%;position: relative;}
+        .section4 .article-item .article-con h3{line-height: 0.9rem;font-size: 0.675rem;}
+        .section4 .article-item .article-con p{position: absolute;bottom: 0;left: 0; line-height: 0.7rem;font-size: 0.55rem;color: #c3c3c3;}
+        .section4 .article-item-gat{padding: 0 0.35rem;}
+        .section4 .article-item-gat h3{line-height: 1.625rem;font-size: 0.675rem;}
+        .section4 .article-item-gat .titleimg{display: flex;display: -webkit-flex;-webkit-flex-flow:row nowrap ;flex-flow:row nowrap ;-webkit-justify-content: space-between;justify-content: space-between;}
+        .section4 .article-item-gat .titleimg .imgbox{flex: 0 0 32.7%;-webkit-flex: 0 0 32.7%;overflow: hidden;}
+        .section4 .article-item-gat p{line-height: 1.3rem;font-size: 0.55rem;color: #c3c3c3;}
+    </style>
+</head>
+<body>
+<div class="top-bar">
+    <a class="back-key">返回</a>
+    <h1>这是标题</h1>
+</div>
+<div class="nav-bar">
+    <a class="active">导航</a>
+    <a>导航</a>
+    <a>导航</a>
+    <a>导航</a>
+    <a>导航</a>
+</div>
+<div class="main-con">
+
+    <div class="banner">
+        <div class="imgbox">
+            <img src="img/banner.jpg"/>
+        </div>
+    </div>
+    <div class="wrapper section1">
+        <ul class="labelbox">
+            <li>
+                <span></span>
+                <a>标签</a>
+            </li>
+            <li>
+                <span></span>
+                <a>标签</a>
+            </li>
+            <li>
+                <span></span>
+                <a>标签</a>
+            </li>
+            <li>
+                <span></span>
+                <a>标签</a>
+            </li>
+            <li>
+                <span></span>
+                <a>标签</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrapper section2">
+        <div class="columnbox">
+            <div class="item-column">
+                <div class="imgbox">
+                    <img src="img/demo1.jpg" />
+                </div>
+                <h2>分栏一</h2>
+                <h3>分栏小标题</h3>
+            </div>
+            <div class="item-column">
+                <div class="imgbox">
+                    <img src="img/demo1.jpg" />
+                </div>
+                <h2>分栏一</h2>
+                <h3>分栏小标题</h3>
+            </div>
+
+            <div class="item-column">
+                <div class="imgbox">
+                    <img src="img/demo1.jpg" />
+                </div>
+                <h2>分栏一</h2>
+                <h3>分栏小标题</h3>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="section3">
+        <h2>模块一</h2>
+        <div class="section_item">
+            <div class="imgbox titleimg">
+                <img src="img/titleimg.jpg"/>
+            </div>
+            <div class="text_case">
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+            </div>
+        </div>
+        <div class="section_item">
+            <div class="imgbox titleimg">
+                <img src="img/titleimg.jpg"/>
+            </div>
+            <div class="text_case">
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <h2>模块一</h2>
+        <div class="section_item">
+            <div class="imgbox titleimg">
+                <img src="img/titleimg.jpg"/>
+            </div>
+            <div class="text_case">
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+            </div>
+        </div>
+        <div class="section_item">
+            <div class="imgbox titleimg">
+                <img src="img/titleimg.jpg"/>
+            </div>
+            <div class="text_case">
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+                <h3>这是文案</h3>
+            </div>
+        </div>
+    </div>
+    <div class="section4">
+        <ul>
+            <li class="article-item">
+                <div class="imgbox">
+                    <img src="img/demo2.jpg"/>
+                </div>
+                <div class="article-con">
+                    <h3>这是标题这是标题这是标题这是标题这是标</h3>
+                    <p>文章来源 <span>7</span>分钟前</p>
+                </div>
+            </li>
+            <li class="article-item">
+                <div class="imgbox">
+                    <img src="img/demo2.jpg"/>
+                </div>
+                <div class="article-con">
+                    <h3>这是标题这是标题这是标题这是标题这是标</h3>
+                    <p>文章来源 <span>7</span>分钟前</p>
+                </div>
+            </li>
+        </ul>
+        <div class="article-item-gat">
+            <h3>这是标题这是标题这是标题这是标题</h3>
+            <div class="titleimg">
+                <div class="imgbox">
+                    <img src="img/demo2.jpg"/>
+                </div>
+                <div class="imgbox">
+                    <img src="img/demo2.jpg"/>
+                </div>
+                <div class="imgbox">
+                    <img src="img/demo2.jpg"/>
+                </div>
+            </div>
+            <p>文章来源 <span>7</span>分钟前</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
